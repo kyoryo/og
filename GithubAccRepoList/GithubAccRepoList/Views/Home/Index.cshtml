@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    //var repoList = ViewBag["repo"];
+    var repoList = (IEnumerable<string>)ViewData["repo"];
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h3>List of Repositories from @ViewData["owner"]</h3>
+    @foreach (var item in repoList)
+    {
+        <a href="@Url.Action("Issues", "Home", new { owner = @ViewData["owner"], repoName = item })">@item</a><br/>
+    }
+</div>

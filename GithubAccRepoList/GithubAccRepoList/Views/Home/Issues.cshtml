@@ -1,0 +1,15 @@
+﻿@using Octokit
+@{
+    ViewData["Title"] = "Issue Page";
+    var issueList = (List<Issue>)ViewData["issues"];
+}
+
+    <div class="text-left">
+        <h1 class="display-4">Welcome</h1>
+        @foreach (var item in issueList)
+        {
+            <h3>@item.Title</h3><br />
+            <div>@item.Body</div><br/>
+
+        }
+    </div>
